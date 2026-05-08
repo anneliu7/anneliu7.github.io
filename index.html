@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://latex.now.sh/style.css">
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
-        /* Ensures the side-by-side layout works well on all screens */
         .intro-container {
             display: flex;
             align-items: flex-start;
@@ -27,9 +26,20 @@
             flex: 1;
             min-width: 300px;
         }
-        /* Removes extra space at the top of the bio */
         .bio-text h2 {
             margin-top: 0;
+        }
+
+        /* Styles for your new GIF section */
+        .simulation-container {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .simulation-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #444;
         }
     </style>
 </head>
@@ -52,8 +62,8 @@
                     <h2>About Me</h2>
                     <p>
                         I am a 3rd year math PhD student at NYU working with Dr. Mike O'Neil on <strong>fast
-                            integral equation solvers</strong> for wave scattering problems with applications in 
-                            acoustic and electromagnetic phenomena. 
+                        integral equation solvers</strong> for wave scattering problems with applications in 
+                        acoustic and electromagnetic phenomena. 
                     </p>
                     <p>
                         I primarily develop algorithms in <strong>Julia</strong> and many of my projects have an FFT flavor.
@@ -62,13 +72,19 @@
             </div>
         </div>
 
+        <section class="simulation-container">
+            <h2>Research Visualization</h2>
+            <img src="simulation.gif" alt="Wave scattering simulation">
+            <p><em>Short description of what the GIF is showing (e.g., Scattering off a complex boundary).</em></p>
+        </section>
+
         <section>
             <h2>Publications & Research</h2>
             <ul>
                 <li>
                     <strong>An artificially-damped Fourier method for dispersive evolution equations</strong> <br>
                     <em>Applied Numerical Mathematics (2023)</em> <br>
-                    <a href=https://arxiv.org/abs/2301.05789>https://arxiv.org/abs/2301.05789</a>
+                    <a href="https://arxiv.org/abs/2301.05789">https://arxiv.org/abs/2301.05789</a>
                 </li>
             </ul>
         </section>
