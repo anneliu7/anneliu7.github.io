@@ -9,33 +9,38 @@
     <style>
         .intro-container {
             display: flex;
-            align-items: flex-start;
+            align-items: stretch; /* Forces items to match height */
             gap: 40px;
             flex-wrap: wrap;
             margin-top: 2rem;
         }
         .profile-photo {
-            flex: 0 0 250px;
+            flex: 0 0 350px; /* Increased size to better match text volume */
+            max-width: 100%;
         }
         .profile-photo img {
             width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures image fills the area without stretching */
             border-radius: 8px;
             display: block;
         }
         .bio-text {
             flex: 1;
             min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centers text vertically against the image */
         }
         .bio-text h2 {
             margin-top: 0;
         }
 
-        /* Styles for your new GIF section */
         .simulation-container {
-            margin-top: 2rem;
+            margin-top: 3rem;
             text-align: center;
         }
-        .simulation-container img {
+        .simulation-container video, .simulation-container img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
@@ -74,8 +79,15 @@
 
         <section class="simulation-container">
             <h2>Research Visualization</h2>
-            <img src="simulation.gif" alt="Wave scattering simulation">
-            <p><em>Short description of what the GIF is showing (e.g., Scattering off a complex boundary).</em></p>
+            <video id="sim-video" autoplay loop muted playsinline>
+                <source src="simulation.mp4" type="video/mp4">
+                <img src="simulation.gif" alt="Wave scattering simulation">
+            </video>
+            <script>
+                // This script sets the speed to 3x once the page loads
+                document.getElementById('sim-video').playbackRate = 3.0;
+            </script>
+            <p><em>Wave scattering simulation running at accelerated speed.</em></p>
         </section>
 
         <section>
