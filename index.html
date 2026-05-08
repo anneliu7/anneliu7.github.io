@@ -6,26 +6,62 @@
     <title>Annie Liu | Computational Mathematics</title>
     <link rel="stylesheet" href="https://latex.now.sh/style.css">
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* Ensures the side-by-side layout works well on all screens */
+        .intro-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        .profile-photo {
+            flex: 0 0 250px;
+        }
+        .profile-photo img {
+            width: 100%;
+            border-radius: 8px;
+            display: block;
+        }
+        .bio-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        /* Removes extra space at the top of the bio */
+        .bio-text h2 {
+            margin-top: 0;
+        }
+    </style>
 </head>
 <body class="latex-dark-mode">
     <header>
         <h1>Annie Liu</h1>
-        <p class="author">PhD Student in Computational Mathematics</p>
     </header>
 
     <main>
-        <section>
-            <h2>About Me</h2>
-            <p>
-                I am a researcher specializing in <strong>numerical analysis</strong> and <strong>scientific computing</strong>. 
-                My current work focuses on high-order solvers for the <strong>Attenuated Wave Equation</strong> using 
-                Sum-of-Exponentials (SOE) representations.
-            </p>
-            <p>
-                I primarily develop algorithms in <strong>Julia</strong> and am interested in optimization principles 
-                and nonsmooth analysis.
-            </p>
-        </section>
+        <div class="intro-container">
+            <div class="profile-photo">
+                <img src="profile.jpg" alt="Annie Liu">
+            </div>
+
+            <div class="bio-text">
+                <p class="author" style="font-weight: bold; font-size: 1.2em; margin-bottom: 1rem;">
+                    PhD Student in Computational Mathematics
+                </p>
+                <section>
+                    <h2>About Me</h2>
+                    <p>
+                        I am a researcher specializing in <strong>numerical analysis</strong> and <strong>scientific computing</strong>. 
+                        My current work focuses on high-order solvers for the <strong>Attenuated Wave Equation</strong> using 
+                        Sum-of-Exponentials (SOE) representations.
+                    </p>
+                    <p>
+                        I primarily develop algorithms in <strong>Julia</strong> and am interested in optimization principles 
+                        and nonsmooth analysis.
+                    </p>
+                </section>
+            </div>
+        </div>
 
         <section>
             <h2>Publications & Research</h2>
@@ -45,7 +81,10 @@
         <section>
             <h2>Contact</h2>
             <p>Email: <a href="mailto:your-email@university.edu">your-email@university.edu</a></p>
-            <p><a href="https://github.com/your-username">GitHub</a> | <a href="https://overleaf.com">CV (PDF)</a></p>
+            <p>
+                <a href="https://github.com/anneliu7">GitHub</a> | 
+                <a href="#">CV (PDF)</a>
+            </p>
         </section>
     </main>
 </body>
