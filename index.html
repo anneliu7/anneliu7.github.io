@@ -7,44 +7,81 @@
     <link rel="stylesheet" href="https://latex.now.sh/style.css">
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
+        /* Sleek adjustments to the standard LaTeX CSS */
+        body {
+            max-width: 900px; /* Wider for a more modern feel */
+            margin: 0 auto;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        header {
+            border-bottom: 1px solid #444;
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+        }
+
         .intro-container {
             display: flex;
-            align-items: stretch; /* Forces items to match height */
-            gap: 40px;
-            flex-wrap: wrap;
-            margin-top: 2rem;
+            align-items: flex-start;
+            gap: 50px;
+            margin-bottom: 4rem;
         }
+
         .profile-photo {
-            flex: 0 0 350px; /* Increased size to better match text volume */
-            max-width: 100%;
+            flex: 0 0 180px; /* Smaller, fixed professional size */
         }
+
         .profile-photo img {
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ensures image fills the area without stretching */
-            border-radius: 8px;
-            display: block;
+            height: auto;
+            border-radius: 4px;
+            filter: grayscale(10%); /* Optional: subtle academic aesthetic */
+            border: 1px solid #555;
         }
+
         .bio-text {
             flex: 1;
-            min-width: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center; /* Centers text vertically against the image */
         }
+
         .bio-text h2 {
             margin-top: 0;
+            font-variant: small-caps;
         }
 
         .simulation-container {
-            margin-top: 3rem;
+            margin: 4rem 0;
+            padding: 2rem;
+            background: #1a1a1a; /* Subtle contrast background */
+            border-radius: 8px;
             text-align: center;
         }
-        .simulation-container video, .simulation-container img {
+
+        .simulation-container video {
             max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            border: 1px solid #444;
+            border-radius: 4px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .caption {
+            margin-top: 1.5rem;
+            font-size: 0.95em;
+            color: #ccc;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Publication styling */
+        .pub-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .pub-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 2px solid #0070f3;
         }
     </style>
 </head>
@@ -60,53 +97,53 @@
             </div>
 
             <div class="bio-text">
-                <p class="author" style="font-weight: bold; font-size: 1.2em; margin-bottom: 1rem;">
-                    PhD Student in Applied Math at the Courant Institute, NYU
+                <p style="font-size: 1.1em; color: #aaa; margin-top: 0;">
+                    PhD Student in Applied Math <br>
+                    <strong>Courant Institute, NYU</strong>
                 </p>
                 <section>
-                    <h2>About Me</h2>
+                    <h2>Research Interests</h2>
                     <p>
-                        I am a 3rd year math PhD student at NYU working with Dr. Mike O'Neil on <strong>fast
-                        integral equation solvers</strong> for wave scattering problems with applications in 
-                        acoustic and electromagnetic phenomena. 
-                    </p>
-                    <p>
-                        I primarily develop algorithms in <strong>Julia</strong> and many of my projects have an FFT flavor.
+                        I work with Dr. Mike O'Neil on <strong>fast integral equation solvers</strong> for wave scattering problems. My research focuses on developing efficient algorithms for acoustic and electromagnetic phenomena, primarily utilizing <strong>Julia</strong> and Fourier-based methods.
                     </p>
                 </section>
             </div>
         </div>
 
         <section class="simulation-container">
-            <h2>Research Visualization</h2>
             <video id="sim-video" autoplay loop muted playsinline>
                 <source src="simulation.mp4" type="video/mp4">
                 <img src="simulation.gif" alt="Wave scattering simulation">
             </video>
-            <script>
-                // This script sets the speed to 3x once the page loads
-                document.getElementById('sim-video').playbackRate = 3.0;
-            </script>
-            <p><em>Wave scattering simulation running at accelerated speed.</em></p>
+            <div class="caption">
+                A solution of a wave equation with attenuation 
+                $$u_{tt}-u_{xx}+2\sqrt{2}\alpha_0\partial_t^{3/2}u+2\alpha_0^2u_t=0$$ 
+                with Gaussian initial data.
+            </div>
         </section>
 
+        <script>
+            // Ensuring the video plays at 3x speed
+            const video = document.getElementById('sim-video');
+            video.playbackRate = 3.0;
+        </script>
+
         <section>
-            <h2>Publications & Research</h2>
-            <ul>
-                <li>
+            <h2>Publications</h2>
+            <div class="pub-list">
+                <div class="pub-item">
                     <strong>An artificially-damped Fourier method for dispersive evolution equations</strong> <br>
                     <em>Applied Numerical Mathematics (2023)</em> <br>
-                    <a href="https://arxiv.org/abs/2301.05789">https://arxiv.org/abs/2301.05789</a>
-                </li>
-            </ul>
+                    <a href="https://arxiv.org/abs/2301.05789" style="font-family: monospace; font-size: 0.9em;">arXiv:2301.05789</a>
+                </div>
+            </div>
         </section>
 
-        <section>
+        <section style="margin-top: 4rem;">
             <h2>Contact</h2>
-            <p>Email: <a href="mailto:anneliu@nyu.edu">anneliu@nyu.edu</a></p>
             <p>
-                <a href="https://github.com/anneliu7">GitHub</a> | 
-                <a href="#">CV (PDF)</a>
+                Email: <a href="mailto:anneliu@nyu.edu">anneliu@nyu.edu</a> <br>
+                Links: <a href="https://github.com/anneliu7">GitHub</a> | <a href="#">Curriculum Vitae</a>
             </p>
         </section>
     </main>
