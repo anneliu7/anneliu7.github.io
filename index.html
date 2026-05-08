@@ -7,9 +7,8 @@
     <link rel="stylesheet" href="https://latex.now.sh/style.css">
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
-        /* Sleek adjustments to the standard LaTeX CSS */
         body {
-            max-width: 900px; /* Wider for a more modern feel */
+            max-width: 900px;
             margin: 0 auto;
             padding: 2rem;
             line-height: 1.6;
@@ -29,14 +28,14 @@
         }
 
         .profile-photo {
-            flex: 0 0 180px; /* Smaller, fixed professional size */
+            flex: 0 0 180px;
         }
 
         .profile-photo img {
             width: 100%;
             height: auto;
             border-radius: 4px;
-            filter: grayscale(10%); /* Optional: subtle academic aesthetic */
+            filter: grayscale(10%);
             border: 1px solid #555;
         }
 
@@ -52,9 +51,16 @@
         .simulation-container {
             margin: 4rem 0;
             padding: 2rem;
-            background: #1a1a1a; /* Subtle contrast background */
+            background: #1a1a1a; 
             border-radius: 8px;
             text-align: center;
+        }
+
+        /* FIXED: Added color: white to make the title visible */
+        .simulation-container h2 {
+            color: white !important; 
+            margin-top: 0;
+            margin-bottom: 1.5rem;
         }
 
         .simulation-container video {
@@ -72,7 +78,6 @@
             margin-right: auto;
         }
 
-        /* Publication styling */
         .pub-list {
             list-style-type: none;
             padding-left: 0;
@@ -113,7 +118,7 @@
         </div>
 
         <section class="simulation-container">
-            <h2>Current Work</h2>
+            <h2>Current Project</h2>
             <video id="sim-video" autoplay loop muted playsinline>
                 <source src="simulation.mp4" type="video/mp4">
                 <img src="simulation.gif" alt="Wave scattering simulation">
@@ -126,9 +131,10 @@
         </section>
 
         <script>
-            // Ensuring the video plays at 3x speed
             const video = document.getElementById('sim-video');
-            video.playbackRate = 3.0;
+            if (video) {
+                video.playbackRate = 3.0;
+            }
         </script>
 
         <section>
